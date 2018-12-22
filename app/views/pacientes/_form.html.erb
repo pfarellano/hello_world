@@ -11,63 +11,67 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :nombre %>
+<div class="field">
+    <%= form.label :Nombre %>
     <%= form.text_field :nombre, id: :paciente_nombre %>
-  </div>
+</div>
 
-  <div class="field">
-    <%= form.label :segundo_nombre %>
+<div class="field">
+    <%= form.label :"Segundo Nombre" %>
     <%= form.text_field :segundo_nombre, id: :paciente_segundo_nombre %>
-  </div>
+</div>
 
   <div class="field">
-    <%= form.label :apellido_paterno %>
+    <%= form.label :"Apellido Paterno" %>
     <%= form.text_field :apellido_paterno, id: :paciente_apellido_paterno %>
   </div>
 
   <div class="field">
-    <%= form.label :apellido_materno %>
+    <%= form.label :"Apellido Materno" %>
     <%= form.text_field :apellido_materno, id: :paciente_apellido_materno %>
   </div>
 
   <div class="field">
-    <%= form.label :fecha_nacimiento %>
-    <%= form.date_select :fecha_nacimiento, id: :paciente_fecha_nacimiento %>
+    <%= form.label :"Fecha de Nacimiento" %>
+    <%= form.date_select :fecha_nacimiento, id: :paciente_fecha_nacimiento,
+    :order => [:day, :month, :year],:use_month_names=> ["Enero","Febrero","Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre",
+    "Octubre", "Noviembre", "Diciembre"],  :start_year => Date.today.year - 110, :end_year => Date.today.year %>
+  </div>
+
+
+  <div class="field">
+    <%= form.label :Rut %>
+    <%= form.text_field :rut, :placeholder =>"12.345.678-9", id: :paciente_rut %>
   </div>
 
   <div class="field">
-    <%= form.label :rut %>
-    <%= form.text_field :rut, id: :paciente_rut %>
-  </div>
-
-  <div class="field">
-    <%= form.label :direccion %>
+    <%= form.label :Dirección %>
     <%= form.text_field :direccion, id: :paciente_direccion %>
   </div>
 
-  <div class="field">
-    <%= form.label :prevision %>
-    <%= form.text_field :prevision, id: :paciente_prevision %>
-  </div>
+
+<div class="field">
+  <%= form.label :Previsión %>
+  <%= form.select :prevision, ["Banmédica","Colmena","Consalud","CruzBlanza", "Isapre Fundación", "Particular", "Masvida", "Vidatres"],id: :paciente_prevision%>
+</div>
 
   <div class="field">
-    <%= form.label :telefono %>
+    <%= form.label :Teléfono %>
     <%= form.text_field :telefono, id: :paciente_telefono %>
   </div>
 
   <div class="field">
-    <%= form.label :celular %>
+    <%= form.label :Celular %>
     <%= form.text_field :celular, id: :paciente_celular %>
   </div>
 
   <div class="field">
-    <%= form.label :ocupacion %>
+    <%= form.label :Ocupación %>
     <%= form.text_field :ocupacion, id: :paciente_ocupacion %>
   </div>
 
   <div class="field">
-    <%= form.label :ciudad %>
+    <%= form.label :Ciudad %>
     <%= form.text_field :ciudad, id: :paciente_ciudad %>
   </div>
 

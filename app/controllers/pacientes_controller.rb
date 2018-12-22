@@ -4,7 +4,12 @@ class PacientesController < ApplicationController
   # GET /pacientes
   # GET /pacientes.json
   def index
-    @pacientes = Paciente.all
+    if params[:name]
+      @pacientes = Paciente.where('nombre LIKE ? OR apellido_paterno LIKE ? OR rut LIKE ?', "%#{params[:name]}%","%#{params[:name]}%","%#{params[:name]}%")
+    else
+      @pacientes = Paciente.all
+    end
+
   end
 
   # GET /pacientes/1
